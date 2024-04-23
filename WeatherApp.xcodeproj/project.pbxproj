@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7548BFD52BCDC96600AD883D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548BFD42BCDC96600AD883D /* WeatherView.swift */; };
 		75759A672BC9CFDC00D871AC /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75759A662BC9CFDC00D871AC /* WeatherAppApp.swift */; };
 		75759A692BC9CFDC00D871AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75759A682BC9CFDC00D871AC /* ContentView.swift */; };
 		75759A6B2BC9CFDD00D871AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75759A6A2BC9CFDD00D871AC /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7548BFD42BCDC96600AD883D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		75759A632BC9CFDC00D871AC /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75759A662BC9CFDC00D871AC /* WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppApp.swift; sourceTree = "<group>"; };
 		75759A682BC9CFDC00D871AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				75759A662BC9CFDC00D871AC /* WeatherAppApp.swift */,
 				75759A682BC9CFDC00D871AC /* ContentView.swift */,
+				7548BFD42BCDC96600AD883D /* WeatherView.swift */,
 				75759A6A2BC9CFDD00D871AC /* Assets.xcassets */,
 				75759A6C2BC9CFDD00D871AC /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7548BFD52BCDC96600AD883D /* WeatherView.swift in Sources */,
 				75759A692BC9CFDC00D871AC /* ContentView.swift in Sources */,
 				75759A672BC9CFDC00D871AC /* WeatherAppApp.swift in Sources */,
 			);
