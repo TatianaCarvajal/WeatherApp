@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WeatherView: View {
+    var viewModel = WeatherViewModel(service: ServiceFacade())
+    
     var body: some View {
         ZStack {
             LinearGradient(colors: [.black, .blue, .white], startPoint: .topLeading, endPoint: .bottomLeading)
@@ -120,6 +122,9 @@ struct WeatherView: View {
                 .cornerRadius(20)
             }
             .edgesIgnoringSafeArea(.bottom)
+        }
+        .onAppear {
+           // viewModel
         }
     }
 }
