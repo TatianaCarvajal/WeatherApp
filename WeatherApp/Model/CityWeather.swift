@@ -8,7 +8,7 @@
 import Foundation
 
 struct Coordinates: Codable {
-    var long: Double
+    var lon: Double
     var lat: Double
 }
 

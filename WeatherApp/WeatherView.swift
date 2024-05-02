@@ -124,7 +124,9 @@ struct WeatherView: View {
             .edgesIgnoringSafeArea(.bottom)
         }
         .onAppear {
-           // viewModel
+            Task {
+               await viewModel.fetchCityWeather()
+            }
         }
     }
 }
