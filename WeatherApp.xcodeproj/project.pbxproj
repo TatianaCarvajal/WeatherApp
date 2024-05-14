@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7548BFD52BCDC96600AD883D /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548BFD42BCDC96600AD883D /* WeatherView.swift */; };
+		754A53022BF30CA000D0DA53 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A53012BF30CA000D0DA53 /* WeatherType.swift */; };
 		756E803F2BD9BA780002220B /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E803E2BD9BA780002220B /* WeatherViewModel.swift */; };
 		756E80412BD9BAE80002220B /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E80402BD9BAE80002220B /* ServiceProtocol.swift */; };
 		756E80432BD9BD590002220B /* ServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E80422BD9BD580002220B /* ServiceFacade.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		7548BFD42BCDC96600AD883D /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		754A53012BF30CA000D0DA53 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 		756E803E2BD9BA780002220B /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		756E80402BD9BAE80002220B /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		756E80422BD9BD580002220B /* ServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacade.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				756E80442BD9BE9B0002220B /* CityWeather.swift */,
+				754A53012BF30CA000D0DA53 /* WeatherType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				756E80452BD9BE9B0002220B /* CityWeather.swift in Sources */,
 				756E80432BD9BD590002220B /* ServiceFacade.swift in Sources */,
 				756E80472BD9C2B30002220B /* ServiceError.swift in Sources */,
+				754A53022BF30CA000D0DA53 /* WeatherType.swift in Sources */,
 				756E80412BD9BAE80002220B /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

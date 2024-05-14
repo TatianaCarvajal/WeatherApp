@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherView: View {
-    var viewModel = WeatherViewModel(service: ServiceFacade())
+   @StateObject var viewModel = WeatherViewModel(service: ServiceFacade())
     
     var body: some View {
         ZStack {
@@ -16,13 +16,13 @@ struct WeatherView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                
                 VStack(spacing: 6) {
-                    
-                    Text("Medellin")
-                        .font(.system(size: 34, weight: .bold))
-                        .foregroundColor(.white)
-                    
+                    if let name = viewModel.name {
+                        Text(name)
+                            .font(.system(size: 34, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                 
                     Text("Monday, Apr 15, 4:35pm")
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
@@ -42,29 +42,53 @@ struct WeatherView: View {
                     HStack (alignment: .bottom) {
                         
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("40º")
-                                .font(.system(size: 64))
+                            if let temperature = viewModel.temperature {
+                                Text(temperature)
+                                    .font(.system(size: 64))
+                            }
                             
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("H:20º  L:30º")
-                                    .font(.system(size: 20))
+                                if let lat = viewModel.lat, let lon = viewModel.lon {
+                                    Text(lat)
+                                    Text(lon)
+                                }
                             }
+                            .font(.system(size: 20))
                         }
                         
                         Spacer()
                         
                         VStack (alignment: .trailing, spacing: 0) {
-                            
-                            Image(systemName: "cloud.sun.fill")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .padding(.trailing, 20)
-                            
-                            Text("clear")
-                                .font(.system(size: 18))
-                                .padding(.trailing, 26)
+                            if let weatherType = viewModel.weatherType {
+                                switch weatherType {
+                                case .clouds:
+                                    Image(systemName: "cloud.sun.fill")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 100)
+                                        .padding(.trailing, 20)
+                                case .rain:
+                                    Image(systemName: "cloud.rain.fill")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 100)
+                                        .padding(.trailing, 20)
+                                case .clear:
+                                    Image(systemName: "sun.max.fill")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 100)
+                                        .padding(.trailing, 20)
+                                }
+                            }
+                            if let weatherDescription = viewModel.weatherDescription {
+                                Text(weatherDescription)
+                                    .font(.system(size: 18))
+                                    .padding(.trailing, 26)
+                            }
                         }
                     }
                     .foregroundColor(.black)
@@ -125,7 +149,7 @@ struct WeatherView: View {
         }
         .onAppear {
             Task {
-               await viewModel.fetchCityWeather()
+                await viewModel.fetchCityWeather()
             }
         }
     }
