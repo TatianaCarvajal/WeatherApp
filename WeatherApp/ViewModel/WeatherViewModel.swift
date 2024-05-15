@@ -10,14 +10,11 @@ import Foundation
 @MainActor
 class WeatherViewModel: ObservableObject {
     private let service: ServiceProtocol
+    private let cityWeatherFormatter = CityWeatherFormatter()
+    
     @Published var isLoading = false
     @Published var error: Error?
-    @Published var temperature: String?
-    @Published var weatherType: WeatherType?
-    @Published var weatherDescription: String?
-    @Published var name: String?
-    @Published var lon: String?
-    @Published var lat: String?
+    @Published var weather: WeatherUI?
     
     init(service: ServiceProtocol) {
         self.service = service
@@ -27,27 +24,13 @@ class WeatherViewModel: ObservableObject {
         isLoading = true
         do {
             let weatherData = try await service.fetchCityWeather(cityName: "paris")
-            formatWeatherInformation(weatherData)
-            
+            weather = cityWeatherFormatter.formatWeatherInformation(weatherData)
         }
         catch {
             self.error = error
         }
         isLoading = false
     }
-    
-    func formatWeatherInformation(_ weather: CityWeatherData) {
-        let temperatureAsInteger = Int(weather.main.temp)
-        self.temperature = "\(temperatureAsInteger)º"
-        
-        if let weather = weather.weather.first {
-            weatherType = WeatherType(rawValue: weather.main) ?? .clouds
-            weatherDescription = weather.description
-        }
-        
-        name = weather.name
-        
-        lon = "Lon: \(weather.coord.lon)"
-        lat = "Lat: \(weather.coord.lat)"
-    }
 }
+
+
