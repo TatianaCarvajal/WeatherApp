@@ -23,6 +23,7 @@
 		75759A782BC9CFDD00D871AC /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75759A772BC9CFDD00D871AC /* WeatherAppTests.swift */; };
 		75759A822BC9CFDD00D871AC /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75759A812BC9CFDD00D871AC /* WeatherAppUITests.swift */; };
 		75759A842BC9CFDD00D871AC /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75759A832BC9CFDD00D871AC /* WeatherAppUITestsLaunchTests.swift */; };
+		759B747C2BF805400018456F /* WeatherTypeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759B747B2BF805400018456F /* WeatherTypeImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		75759A7D2BC9CFDD00D871AC /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75759A812BC9CFDD00D871AC /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		75759A832BC9CFDD00D871AC /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		759B747B2BF805400018456F /* WeatherTypeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTypeImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				7521821F2BF5754A00505BE8 /* WeatherInformationItemView.swift */,
+				759B747B2BF805400018456F /* WeatherTypeImageView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				756E803F2BD9BA780002220B /* WeatherViewModel.swift in Sources */,
 				7521821E2BF573FB00505BE8 /* WeatherInformationView.swift in Sources */,
 				75759A672BC9CFDC00D871AC /* WeatherAppApp.swift in Sources */,
+				759B747C2BF805400018456F /* WeatherTypeImageView.swift in Sources */,
 				756E80452BD9BE9B0002220B /* CityWeather.swift in Sources */,
 				756E80432BD9BD590002220B /* ServiceFacade.swift in Sources */,
 				756E80472BD9C2B30002220B /* ServiceError.swift in Sources */,

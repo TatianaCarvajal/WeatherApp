@@ -16,17 +16,10 @@ struct WeatherView: View {
                 .edgesIgnoringSafeArea(.all)
             if let weather = viewModel.weather {
                 VStack {
-                    VStack(spacing: 6) {
-                        
-                        Text(weather.name)
-                            .font(.system(size: 34, weight: .bold))
-                            .foregroundColor(.white)
-                        
-                        Text("Monday, Apr 15, 4:35pm")
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    .padding()
+                    Text(weather.name)
+                        .font(.system(size: 34, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.top, 60)
                     
                     Spacer()
                     
@@ -35,10 +28,9 @@ struct WeatherView: View {
                             .trim(from: 0.0, to: 0.62)
                             .foregroundColor(.white)
                             .opacity(0.3)
-                            .frame(width: 342, height: 174, alignment: .bottom )
+                            .frame(width: 342, height: 174, alignment: .bottom)
                         
-                        
-                        HStack (alignment: .bottom) {
+                        HStack(alignment: .bottom) {
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 Text(weather.temperature)
@@ -47,43 +39,29 @@ struct WeatherView: View {
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(weather.latitude)
                                     Text(weather.longitude)
-                                    
                                 }
                                 .font(.system(size: 20))
                             }
+                            .padding(.horizontal)
                             
                             Spacer()
                             
-                            VStack (alignment: .trailing, spacing: 0) {
-                                
+                            VStack(spacing: 4) {
                                 switch weather.weatherType {
                                 case .clouds:
-                                    Image(systemName: "cloud.sun.fill")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 100, height: 100)
-                                        .padding(.trailing, 20)
+                                    WeatherTypeImageView(weatherImage: "cloud.sun.fill")
                                 case .rain:
-                                    Image(systemName: "cloud.rain.fill")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 100, height: 100)
-                                        .padding(.trailing, 20)
+                                    WeatherTypeImageView(weatherImage: "cloud.rain.fill")
                                 case .clear:
-                                    Image(systemName: "sun.max.fill")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 100, height: 100)
-                                        .padding(.trailing, 20)
+                                    WeatherTypeImageView(weatherImage: "sun.max.fill")
+                                case .snow:
+                                    WeatherTypeImageView(weatherImage: "cloud.snow.fill")
                                 }
                                 
                                 Text(weather.weatherDescription)
-                                    .font(.system(size: 18))
-                                    .padding(.trailing, 26)
+                                    .font(.system(size: 16))
                             }
+                            .padding(.trailing, 30)
                         }
                         .foregroundColor(.black)
                         .padding(.leading, 26)
