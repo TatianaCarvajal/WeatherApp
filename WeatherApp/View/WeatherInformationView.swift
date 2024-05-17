@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct WeatherInformationView: View {
+    var minTemperature: String
+    var maxTemperature: String
+    var pressure: String
+    var humidity: String
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Weather now")
@@ -15,14 +20,14 @@ struct WeatherInformationView: View {
                 .font(.system(size: 20))
             
             HStack {
-                WeatherInformationItemView()
+                WeatherInformationItemView(title: "Temp min", imageName: "thermometer.low", information: minTemperature)
                 Spacer()
-                WeatherInformationItemView()
+                WeatherInformationItemView(title: "Temp max", imageName: "thermometer.high", information: maxTemperature)
             }
             HStack {
-                WeatherInformationItemView()
+                WeatherInformationItemView(title: "Pressure", imageName: "gauge.medium", information: pressure)
                 Spacer()
-                WeatherInformationItemView()
+                WeatherInformationItemView(title: "Humidity", imageName: "humidity.fill", information: humidity)
             }
         }
         .padding()
@@ -33,5 +38,10 @@ struct WeatherInformationView: View {
 }
 
 #Preview {
-    WeatherInformationView()
+    WeatherInformationView(
+        minTemperature: "14",
+        maxTemperature: "40",
+        pressure: "60",
+        humidity: "30"
+    )
 }

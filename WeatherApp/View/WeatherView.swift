@@ -89,7 +89,7 @@ struct WeatherView: View {
                         .padding(.leading, 26)
                     }
                     Spacer()
-                    WeatherInformationView()
+                    WeatherInformationView(minTemperature: weather.minTemperature, maxTemperature: weather.maxTemperature, pressure: weather.pressure, humidity: weather.humidity)
                 }
                 .edgesIgnoringSafeArea(.bottom)
             }
