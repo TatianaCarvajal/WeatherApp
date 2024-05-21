@@ -72,6 +72,11 @@ struct WeatherView: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
         }
+        .alert(isPresented: $viewModel.isShowingError, error: viewModel.error) { error in
+            
+        } message: { error in
+            Text(error.failureReason ?? "")
+        }
         .onAppear {
             Task {
                 await viewModel.fetchCityWeather()

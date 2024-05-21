@@ -13,7 +13,8 @@ class WeatherViewModel: ObservableObject {
     private let cityWeatherFormatter = CityWeatherFormatter()
     
     @Published var isLoading = false
-    @Published var error: Error?
+    @Published var error: ServiceError?
+    @Published var isShowingError = false
     @Published var weather: WeatherUI?
     
     init(service: ServiceProtocol) {
@@ -23,11 +24,14 @@ class WeatherViewModel: ObservableObject {
     func fetchCityWeather() async {
         isLoading = true
         do {
-            let weatherData = try await service.fetchCityWeather(cityName: "paris")
+            let weatherData = try await service.fetchCityWeather(cityName: "seoul")
             weather = cityWeatherFormatter.formatWeatherInformation(weatherData)
         }
         catch {
-            self.error = error
+            if let error = error as? ServiceError {
+                self.error = error
+                isShowingError = true
+            }
         }
         isLoading = false
     }

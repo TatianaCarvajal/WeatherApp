@@ -7,7 +7,26 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum ServiceError: LocalizedError {
+    
     case urlDoesNotExist
     case noDataFound
+    
+    var errorDescription: String? {
+        switch self {
+        case .urlDoesNotExist:
+            return "Url doesn't exist"
+        case .noDataFound:
+            return "No data found"
+        }
+    }
+    
+    var failureReason: String? {
+        switch self {
+        case .urlDoesNotExist:
+            "We couldn't find the url"
+        case .noDataFound:
+            "We couldn't find information of the city, please try again"
+        }
+    }
 }
