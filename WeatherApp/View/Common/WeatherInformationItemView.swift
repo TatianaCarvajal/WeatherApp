@@ -23,7 +23,7 @@ struct WeatherInformationItemView: View {
                 Text(title)
                     .font(.system(size: 14))
                 Text(information)
-                    .font(.system(size: 26))
+                    .font(.system(size: 24))
                     .bold()
             }
         }

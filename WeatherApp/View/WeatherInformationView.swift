@@ -17,7 +17,7 @@ struct WeatherInformationView: View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Weather now")
                 .bold()
-                .font(.system(size: 20))
+                .font(.system(size: 22))
             
             HStack {
                 WeatherInformationItemView(title: "Temp min", imageName: "thermometer.low", information: minTemperature)
@@ -32,7 +32,7 @@ struct WeatherInformationView: View {
         }
         .padding()
         .padding(.bottom)
-        .background(.white)
+        .background(.white.opacity(0.4))
         .cornerRadius(20)
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 class WeatherViewModel: ObservableObject {
     private let service: ServiceProtocol
     private let cityWeatherFormatter = CityWeatherFormatter()
+    var text = ""
     
     @Published var isLoading = false
     @Published var error: ServiceError?
@@ -24,7 +25,7 @@ class WeatherViewModel: ObservableObject {
     func fetchCityWeather() async {
         isLoading = true
         do {
-            let weatherData = try await service.fetchCityWeather(cityName: "seoul")
+            let weatherData = try await service.fetchCityWeather(cityName: text)
             weather = cityWeatherFormatter.formatWeatherInformation(weatherData)
         }
         catch {
