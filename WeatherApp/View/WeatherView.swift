@@ -81,13 +81,29 @@ struct WeatherView: View {
                                     VStack(spacing: 4) {
                                         switch weather.weatherType {
                                         case .clouds:
-                                            WeatherTypeImageView(weatherImage: "cloud.sun.fill")
+                                            WeatherTypeImageView(weatherImage: "cloud.fill")
                                         case .rain:
                                             WeatherTypeImageView(weatherImage: "cloud.rain.fill")
                                         case .clear:
                                             WeatherTypeImageView(weatherImage: "sun.max.fill")
                                         case .snow:
                                             WeatherTypeImageView(weatherImage: "cloud.snow.fill")
+                                        case .drizzle:
+                                            WeatherTypeImageView(weatherImage: "cloud.drizzle.fill")
+                                        case .thunderstorm:
+                                            WeatherTypeImageView(weatherImage: "cloud.bolt.rain.fill")
+                                        case .mist, .fog:
+                                            WeatherTypeImageView(weatherImage: "cloud.fog.fill")
+                                        case .smoke:
+                                            WeatherTypeImageView(weatherImage: "smoke.fill")
+                                        case .haze:
+                                            WeatherTypeImageView(weatherImage: "sun.haze.fill")
+                                        case .dust, .sand:
+                                            WeatherTypeImageView(weatherImage: "sun.dust.fill")
+                                        case .squall:
+                                            WeatherTypeImageView(weatherImage: "wind")
+                                        case .tornado:
+                                            WeatherTypeImageView(weatherImage: "tornado")
                                         }
                                         Text(weather.weatherDescription)
                                             .font(.system(size: 16))
