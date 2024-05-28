@@ -11,8 +11,8 @@ import Foundation
 class WeatherViewModel: ObservableObject {
     private let service: ServiceProtocol
     private let cityWeatherFormatter = CityWeatherFormatter()
-    var text = ""
     
+    @Published var text = ""
     @Published var isLoading = false
     @Published var error: ServiceError?
     @Published var isShowingError = false
