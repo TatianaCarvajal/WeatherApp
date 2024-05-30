@@ -15,21 +15,7 @@ class ServiceProtocolMock: ServiceProtocol {
         if withSuccess == false {
             throw ServiceError.noDataFound
         } else {
-            return CityWeatherData(
-                coord: Coordinates(
-                    lon: 22.4,
-                    lat: 10.3
-                ),
-                weather: [],
-                main: Main(
-                    temp: 20,
-                    tempMin: 16,
-                    tempMax: 22,
-                    pressure: 10.30,
-                    humidity: 30
-                ),
-                name: "paris"
-            )
+            return .mock
         }
     }
 }

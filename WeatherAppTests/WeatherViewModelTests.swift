@@ -27,7 +27,7 @@ final class WeatherViewModelTests: XCTestCase {
     @MainActor
     func testFetchCityWeather_givenServiceFailure() async {
         // Given
-        var serviceProtocolMock = ServiceProtocolMock()
+        let serviceProtocolMock = ServiceProtocolMock()
         serviceProtocolMock.withSuccess = false
         let weatherViewModel = WeatherViewModel(service: serviceProtocolMock)
         // When
