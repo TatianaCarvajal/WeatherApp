@@ -23,6 +23,7 @@ class WeatherViewModel: ObservableObject {
     }
     
     func fetchCityWeather() async {
+        guard !text.isEmpty else { return }
         isLoading = true
         do {
             let weatherData = try await service.fetchCityWeather(cityName: text)
