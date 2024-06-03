@@ -8,7 +8,6 @@
 import Foundation
 
 enum ServiceError: LocalizedError {
-    
     case urlDoesNotExist
     case noDataFound
     
