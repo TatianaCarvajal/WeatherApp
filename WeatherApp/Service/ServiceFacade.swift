@@ -8,7 +8,6 @@
 import Foundation
 
 struct ServiceFacade: ServiceProtocol {
-    
     private let key = "695a5f5698803faf92068d675e0be03c"
     
     func fetchCityWeather(cityName: String) async throws -> CityWeatherData {

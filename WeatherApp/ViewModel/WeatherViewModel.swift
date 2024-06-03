@@ -29,11 +29,13 @@ class WeatherViewModel: ObservableObject {
             let weatherData = try await service.fetchCityWeather(cityName: text)
             weather = cityWeatherFormatter.formatWeatherInformation(weatherData)
         }
+        catch is ServiceError {
+            self.error = error
+            isShowingError = true
+        }
         catch {
-            if let error = error as? ServiceError {
-                self.error = error
-                isShowingError = true
-            }
+            self.error = .noDataFound
+            isShowingError = true
         }
         isLoading = false
     }
