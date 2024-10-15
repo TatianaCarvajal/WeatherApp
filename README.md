@@ -4,7 +4,7 @@ This app allows you to search a city to see the actual weather.
 ## Architecture
 This App uses MVVM architecture. 
 
-## Tecnologies
+## Technologies
 - Swift
 - SwiftUI
 - Combine
